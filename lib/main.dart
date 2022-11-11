@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const MyApp()
-  );
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -15,33 +13,66 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.teal,
         body: SafeArea(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              Container(
-                width: 100.0,
-                color: Colors.red
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const CircleAvatar(
+                radius: 50,
+                backgroundImage: AssetImage('images/cute-puppy.jpg'),
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    height: 100.0,
-                    width: 100.0,
-                    color: Colors.yellow,
-                  ),
-                  Container(
-                    height: 100.0,
-                    width: 100.0,
-                    color: Colors.green,
-                  ),
-                ],
+              const Text('Max Leong',
+                  style: TextStyle(
+                      fontFamily: 'Pacifico',
+                      fontSize: 40.0,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold)),
+              Text('SOFTWARE ENGINEER',
+                  style: TextStyle(
+                      fontFamily: 'SourceSansPro',
+                      color: Colors.teal[100],
+                      letterSpacing: 2,
+                      fontWeight: FontWeight.bold)),
+              SizedBox(
+                height: 20.0,
+                width: 150.0,
+                child: Divider(
+                  color: Colors.teal.shade100
+                ),
               ),
-              Container(
-                width: 100.0,
-                color: Colors.blue,
-              )
+              Card(
+                  margin: const EdgeInsets.symmetric(
+                      vertical: 10.0, horizontal: 25.0),
+                  child: ListTile(
+                    leading: const Icon(
+                      Icons.web,
+                      color: Colors.teal,
+                    ),
+                    title: Text(
+                      'github.com/leongjiameng',
+                      style: TextStyle(
+                        color: Colors.teal.shade900,
+                        fontFamily: 'SourceSansPro',
+                        fontSize: 18,
+                      ),
+                    ),
+                  )),
+              Card(
+                  margin: const EdgeInsets.symmetric(
+                      vertical: 10.0, horizontal: 25.0),
+                  child: ListTile(
+                    leading: const Icon(
+                      Icons.email,
+                      color: Colors.teal,
+                    ),
+                    title: Text(
+                      'maxleong@outlook.sg',
+                      style: TextStyle(
+                        color: Colors.teal.shade900,
+                        fontFamily: 'SourceSansPro',
+                        fontSize: 18,
+                      ),
+                    ),
+                  ))
             ],
           ),
         ),
@@ -49,5 +80,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
